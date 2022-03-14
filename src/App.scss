@@ -1,0 +1,11 @@
+.app {
+  @apply h-screen bg-cover bg-no-repeat;
+
+  &.-light {
+    // @apply bg-slate-100 text-slate-900;
+  }
+
+  &.-dark {
+    // @apply bg-slate-900 text-slate-100;
+  }
+}

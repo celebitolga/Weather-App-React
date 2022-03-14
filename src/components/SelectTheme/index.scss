@@ -1,0 +1,11 @@
+.select-theme {
+  @apply fixed top-2 right-2 rounded-full border border-neutral-200 transition-all duration-300 shadow-lg;
+  @apply hover:border-neutral-300;
+  @apply md:top-4 md:right-4;
+
+  background: rgba($color: #000000, $alpha: .1);
+
+  img {
+    @apply w-12 h-12;
+  }
+}

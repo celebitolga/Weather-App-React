@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import './axios';
+
+import { ThemeProvider } from './context/ThemeContext'
+import { WeatherProvider } from './context/WeatherContext';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <WeatherProvider>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </WeatherProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

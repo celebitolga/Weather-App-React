@@ -1,0 +1,109 @@
+.select-box {
+  @apply w-40 z-40;
+  @apply md:relative;
+
+  &.-w-full {
+    @apply w-full;
+  }
+
+  &__selected {
+    $selected: &;
+    @apply flex items-center justify-between w-full h-10 rounded-md p-2 transition-all duration-300;
+
+    &:hover {
+      background: rgba($color: #000000, $alpha: .1);
+      #{$selected}-label,
+      #{$selected}-icon {
+        @apply opacity-90;
+      }
+    }
+
+    &-label {
+      @apply text-blue-800 whitespace-nowrap line-clamp-1 transition-all duration-300;
+    }
+
+    &-icon {
+      @apply ml-2 transition-all duration-300;
+
+      path {
+        @apply fill-blue-800 transition-all duration-300;
+      }
+    }
+
+    &.-active {
+      background: rgba($color: #000000, $alpha: .1);
+      #{$selected}-icon {
+        @apply rotate-180;
+      }
+    }
+
+    &.-light {
+      #{$selected}-label {
+        @apply text-blue-800;
+      }
+
+      #{$selected}-icon {
+        path {
+          @apply fill-blue-800;
+        }
+      }
+    }
+
+    &.-dark {
+      #{$selected}-label {
+        @apply text-blue-200;
+      }
+      
+      #{$selected}-icon {
+        path {
+          @apply fill-blue-200;
+        }
+      }
+    }
+  }
+
+  &__options {
+    &-holder {
+      @apply hidden w-full absolute top-1/2 left-0 p-4 transform -translate-y-1/2;
+      @apply md:top-auto md:translate-y-0 md:p-0;
+
+      &.-active {
+        @apply flex flex-col;
+      }
+    }
+
+    &-items {
+      max-height: calc(100vh - 8rem);
+      @apply rounded-xl shadow-lg py-2 overflow-y-auto;
+      @apply md:max-h-48 md:mt-1;
+
+      background: rgba($color: #000000, $alpha: .5);
+
+      &::-webkit-scrollbar {
+        @apply hidden;
+      }
+    }
+
+    &-option {
+      @apply min-h-6 break-words cursor-pointer p-2 transition-all duration-300 text-zinc-100;
+      @apply hover:bg-blue-400;
+
+      &.-selected {
+        @apply bg-blue-400;
+      }
+
+      &.-empty {
+        @apply cursor-default hover:bg-blue-300;
+      }
+    }
+  }
+
+  &__overlay {
+    @apply w-full h-screen bg-transparent fixed top-0 left-0 z-30 opacity-0 invisible pointer-events-none;
+    content: "";
+
+    &.-visible {
+      @apply opacity-100 visible pointer-events-auto;
+    }
+  }
+}

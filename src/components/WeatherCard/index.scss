@@ -1,0 +1,101 @@
+.weather-card {
+  @apply w-full relative;
+  @apply md:max-w-screen-md;
+
+  &__container {
+    @apply w-full flex flex-col items-center bg-blue-200 text-blue-800 rounded-xl p-4 transition-all duration-300;
+
+    &.-light {
+      @apply bg-blue-200 text-blue-800;
+    }
+
+    &.-dark {
+      @apply bg-blue-800 text-blue-200;
+    }
+  }
+
+  .degree {
+    @apply absolute left-2 top-2;
+    @apply md:top-4 md:left-4;
+  }
+
+  &__cities {
+    @apply my-4;
+  }
+
+  &__showing-weather {
+  }
+
+  &__days-holder {
+    @apply flex items-center justify-between space-x-4 w-full overflow-x-auto;
+  }
+}
+
+.showing-weather {
+  @apply text-center capitalize;
+
+  &__img {
+    @apply w-20 mx-auto;
+  }
+
+  &__temp {
+    @apply text-2xl font-medium my-4 border border-white py-4 px-6 rounded-3xl shadow-2xl;
+  }
+
+  &__feels {
+    @apply mb-4;
+  }
+
+  &__skeleton {
+    div {
+      content: "";
+      @apply block;
+    }
+
+    &-img {
+      @apply w-20 h-20 mx-auto bg-slate-400;
+    }
+
+    &-description {
+      @apply w-28 h-6 mx-auto bg-slate-400;
+    }
+
+    &-temp {
+      @apply w-28 h-16 mx-auto my-4 border border-white py-4 px-6 rounded-3xl shadow-2xl bg-slate-400;
+    }
+
+    &-feels {
+      @apply w-32 h-6 mx-auto bg-slate-400 mb-4;
+    }
+  }
+}
+
+.weather-day {
+  @apply flex-shrink-0 h-full flex flex-col justify-between items-center text-center p-4 cursor-pointer border border-transparent rounded-md;
+
+  &.-selected {
+    @apply border-blue-600;
+  }
+
+  img {
+    @apply w-10 h-auto;
+  }
+
+  &__skeleton {
+    @apply flex-shrink-0 w-full max-w-[5rem] h-[7.5rem] h-full flex flex-col justify-between items-center;
+
+    div {
+      content: "";
+      @apply block;
+    }
+
+    &-time,
+    &-temp {
+      @apply w-6 h-5 mx-auto bg-slate-400;
+    }
+
+    &-img {
+      @apply w-10 h-10 my-1 mx-auto bg-slate-400;
+    }
+  }
+}
