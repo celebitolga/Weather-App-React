@@ -11,6 +11,9 @@ function SelectTheme() {
   const { theme, setTheme } = useTheme();
 
   const handleClick = () => {
+    /*
+      Buton click olduğunda ilgili theme statini güncelliyoruz
+    */
     setTheme(theme === "light" ? "dark" : "light");
   };
 

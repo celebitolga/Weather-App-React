@@ -10,6 +10,9 @@ function Degree() {
   const { degree, setDegree } = useWeather();
 
   const handleClick = () => {
+    /*
+      Derece seçimine tıklandığı zaman ilgili dereyi güncelliyoruz
+    */
     setDegree(degree === "celsius" ? "kelvin" : "celsius");
   };
 

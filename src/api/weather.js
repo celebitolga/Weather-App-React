@@ -1,8 +1,9 @@
 import axios from "axios";
 
-// https://api.openweathermap.org/data/2.5/forecast?q=karabuk&cnt=7&units=metric&appid=acf40df44174463c5f86e6bbed71b023&lang=tr
-
 export const getWeather = async (city) => {
+  /*
+    Gelen şehir bilgisine göre backende istek atıyoruz
+  */
   const { data } = await axios.get("forecast", {
     params: {
       q: city || "istanbul",
