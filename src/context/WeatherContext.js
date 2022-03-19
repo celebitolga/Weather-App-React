@@ -5,9 +5,16 @@ import { localStorageGetItem, localStorageSetItem } from "../localStorage";
 const WeatherContext = createContext();
 
 export const WeatherProvider = ({ children }) => {
-  const [selectedCity, setSelectedCity] = useState(JSON.parse(localStorageGetItem("selectedCity")) || {});
+  const [selectedCity, setSelectedCity] = useState(
+    JSON.parse(localStorageGetItem("selectedCity")) || {
+      label: "Adana",
+      value: "adana",
+    }
+  );
 
-  const [degree, setDegree] = useState(localStorageGetItem("degree") || 'celsius');
+  const [degree, setDegree] = useState(
+    localStorageGetItem("degree") || "celsius"
+  );
 
   const [weathers, setWeathers] = useState([]);
 
@@ -25,7 +32,7 @@ export const WeatherProvider = ({ children }) => {
     degree,
     setDegree,
     weathers,
-    setWeathers
+    setWeathers,
   };
 
   return (

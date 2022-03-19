@@ -9,6 +9,9 @@ function Day({
 }) {
   
   const getDateTime = (date) => {
+    /*
+      date verisini zamana atayıp içerisinden saat ve dakika geri döndürüyoruz
+    */
     return new Date(date).toLocaleTimeString("tr", {
       hour: "2-digit",
       minute: "2-digit",

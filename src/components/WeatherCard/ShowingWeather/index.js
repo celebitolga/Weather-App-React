@@ -4,6 +4,10 @@ function ShowingWeather({ loading, data, calculateTemp }) {
   const [weatherImage, setWeatherImage] = useState("");
 
   useEffect(() => {
+    /*
+      Data değiştiği zaman ve data objesinin içerisinde değer varsa
+      Havanın durumunu gösteren küçük ikonlu fotoğrafın url'ini belirliyoruz
+    */
     if (data && Object.keys(data).length !== 0) {
       setWeatherImage(
         `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`

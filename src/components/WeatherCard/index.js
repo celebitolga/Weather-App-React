@@ -70,6 +70,9 @@ function WeatherCard() {
   const [loading, setLoading] = useState(true);
 
   const calculateTemp = (temp) => {
+    /*
+      Sıcaklık birimine göre gösterilen sıcaklık bilgini ayarlıyoruz
+    */
     if (degree === "celsius") {
       return `${temp} ℃`;
     }
@@ -78,6 +81,10 @@ function WeatherCard() {
   };
 
   const getWeatherFromAPI = async () => {
+    /*
+      Seçilmiş şehir için apiye istek atıyoruz,
+      Gelen veriyi statelere vs. işliyoruz
+    */
     const data = await getWeather(selectedCity.value);
 
     setWeathers(data.list);

@@ -16,12 +16,20 @@ function SelectBox({ selected, setSelected, options, wFull, placeHolder }) {
   let selectedButton = useRef();
 
   const handleSelectedBoxClick = () => {
+    /*
+      Seçilmiş selectbox kutusu tıklandığı zaman
+      Optionsları gösteren alt kutuyu açıp kapattırıyoruz
+    */
     selectBoxOverlay.current.classList.toggle("-visible");
     optionsElement.current.classList.toggle("-active");
     selectedButton.current.classList.toggle("-active");
   };
 
   const handleOptionClick = (option) => {
+    /*
+      Option kutuları tıklandığı zaman kutuyu gizliyoruz ve 
+      tıklanmış kutudaki değeri selected state'ine atıyoruz
+    */
     if (option.value !== "") {
       selectBoxOverlay.current.classList.toggle("-visible");
       optionsElement.current.classList.toggle("-active");
